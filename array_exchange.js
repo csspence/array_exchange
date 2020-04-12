@@ -14,18 +14,19 @@ const exchangeWith = (a, b) => {
   console.log('here is a before: ' + a);
   console.log('here is b before: ' + b);
   let placeHolder;
-  let counter = 0;
-  while(counter < a.length + 1) {
+  let aCounter = a.length - 1;
+  let bCounter = b.length - 1;
+  while(aCounter > 0) {
     let first = a.shift();
-    a.push(first);
-    counter++;
+    a.splice(aCounter, 0, first);
+    aCounter--;
   }
-  counter = 0;
-  while(counter < b.length + 1) {
+  while(bCounter > 0) {
     let first = b.shift();
-    b.push(first);
-    counter++;
+    b.splice(bCounter, 0, first);
+    bCounter--;
   }
+
   placeHolder = a;
   a = b;
   b = placeHolder;
