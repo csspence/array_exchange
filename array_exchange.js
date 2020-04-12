@@ -11,25 +11,12 @@ otherArray => ['c', 'b', 'a']
 */
 
 const exchangeWith = (a, b) => {
-  console.log('here is a before: ' + a);
-  console.log('here is b before: ' + b);
+  console.log('here is a at first: ' + a);
+  console.log('here is b at first: ' + b);
   let placeHolder;
-  let aCounter = a.length - 1;
-  let bCounter = b.length - 1;
-  while(aCounter > 0) {
-    let first = a.shift();
-    a.splice(aCounter, 0, first);
-    aCounter--;
-  }
-  while(bCounter > 0) {
-    let first = b.shift();
-    b.splice(bCounter, 0, first);
-    bCounter--;
-  }
-
-  placeHolder = a;
-  a = b;
+  placeHolder = a.reverse();
+  a = b.reverse();
   b = placeHolder;
-  console.log('here is a after: ' + a);
-  console.log('here is b ater: ' + b);
+  console.log('here is a in the end: ' + a);
+  console.log('here is b in the end: ' + b);
 }
