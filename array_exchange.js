@@ -11,14 +11,24 @@ otherArray => ['c', 'b', 'a']
 */
 
 const exchangeWith = (a, b) => {
-  let newA = [];
-  let newB = [];
-  for(let i = a.length - 1; i > -1; i--) {
-    newB.push(a[i]);
+  console.log('here is a before: ' + a);
+  console.log('here is b before: ' + b);
+  let placeHolder;
+  let counter = 0;
+  while(counter < a.length + 1) {
+    let first = a.shift();
+    a.push(first);
+    counter++;
   }
-  for(let h = b.length - 1; h > -1; h--) {
-    newA.push(b[h]);
+  counter = 0;
+  while(counter < b.length + 1) {
+    let first = b.shift();
+    b.push(first);
+    counter++;
   }
-  a = newA;
-  b = newB;
+  placeHolder = a;
+  a = b;
+  b = placeHolder;
+  console.log('here is a after: ' + a);
+  console.log('here is b ater: ' + b);
 }
